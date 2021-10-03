@@ -1,0 +1,14 @@
+{
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "node": true,
+    "es2021": true,
+    "browser": true
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off"
+  },
+
+  "parser": "babel-eslint"
+}

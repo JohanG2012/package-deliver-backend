@@ -1,0 +1,78 @@
+{
+  "name": "package-delivery-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prepare": "npx husky install",
+    "start": "docker-compose build",
+    "start:dev": "NODE_ENV=DEVELOPMENT node --experimental-specifier-resolution=node index.js",
+    "start:stage": "NODE_ENV=STAGING node --experimental-specifier-resolution=node index.js",
+    "start:prod": "NODE_ENV=PRODUCTION node --experimental-specifier-resolution=node index.js",
+    "start:watch": "cross-env NODE_ENV=DEVELOPMENT nodemon --experimental-specifier-resolution=node index.js",
+    "start:watch:debug": "cross-env NODE_ENV=DEVELOPMENT DEBUG=koa* nodemon --trace-warnings --experimental-specifier-resolution=node index.js",
+    "format": "npx run format:prettier npx run format:eslint",
+    "format:prettier": "prettier --write .",
+    "format:eslint": "eslint --fix .",
+    "test": "jest"
+  },
+  "lint-prepush": {
+    "base": "master",
+    "tasks": {
+      "*.{js,jsx,ts,tsx}": [
+        "eslint"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohanG2012/package-delivery-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohanG2012/package-delivery-backend/issues"
+  },
+  "homepage": "https://github.com/JohanG2012/package-delivery-backend#readme",
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "@koa/router": "^10.1.1",
+    "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.2",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.25.0",
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "joi": "^17.4.2",
+    "joi-objectid": "^4.0.2",
+    "joigoose": "^8.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.3",
+    "koa-bodyparser": "^4.3.0",
+    "koa-combine-routers": "^4.0.2",
+    "koa-compose": "^4.1.0",
+    "koa-jwt": "^4.0.3",
+    "koa-logger": "^3.2.1",
+    "koa-ratelimit": "^5.0.1",
+    "mongoose": "^6.0.10"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "jest": "^27.2.5",
+    "lint-prepush": "^2.2.0",
+    "lint-staged": "^11.2.0",
+    "nodemon": "^2.0.13",
+    "precise-commits": "^1.0.2",
+    "prettier": "^2.4.1"
+  }
+}
