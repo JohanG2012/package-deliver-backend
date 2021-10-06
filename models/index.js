@@ -13,3 +13,4 @@ export const connect = async (uri, errorHandler) => {
 };
 
 export * from "./User";
+export * from "./Cabinet";

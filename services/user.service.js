@@ -14,4 +14,3 @@ export class UserService extends Service {
     super(validators, User);
   }
 }
-

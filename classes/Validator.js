@@ -16,12 +16,16 @@ const optionsSchema = Joi.object({
   fields: Joi.array().items(Joi.string()),
 });
 
+const tokenSchema = Joi.object({
+  user_id: Joi.MongoObjectId(),
+});
 export class Validator {
   constructor(data, schema) {
     this.data = data;
     this.schema = Joi.object({
       pagination: paginationSchema,
       options: optionsSchema,
+      token: tokenSchema,
       input: Joi.object({
         params: Joi.object({ id: Joi.MongoObjectId() }).unknown(true),
         query: Joi.string(),

@@ -38,7 +38,7 @@ export const mongooseResultHandler = (result) => {
 export const serviceLauncher = (Service) => async (method, ctx) => {
   const service = new Service();
   if (!service.validators[method]) throw new Error("Validator is missing");
-  const { params, query: queryParams, request } = ctx;
+  const { params, query: queryParams, request, token } = ctx;
   const { prev, next, sortBy, query, limit, fields: queryFields } = queryParams;
   const { body } = request;
   const fields = queryFields?.replace(/ /g, "").split(",") ?? [];
@@ -60,6 +60,7 @@ export const serviceLauncher = (Service) => async (method, ctx) => {
   options.filters = Object.fromEntries(Object.entries(queryParams).filter((key) => !knownParams.includes(key)));
   const data = {
     pagination,
+    token,
     options,
     input,
   };

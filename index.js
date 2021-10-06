@@ -4,7 +4,17 @@ import rateLimit from "koa-ratelimit";
 import bodyParser from "koa-bodyparser";
 import jwt from "koa-jwt";
 import { privateRouter, publicRouter } from "./routes";
-import { emitError, forceHTTPS, allowCORS, contentValidation, networkLogger, logger, responseLogger, formatResponse } from "./middlewares";
+import {
+  emitError,
+  forceHTTPS,
+  allowCORS,
+  contentValidation,
+  networkLogger,
+  logger,
+  responseLogger,
+  formatResponse,
+  decryptJWT,
+} from "./middlewares";
 import { parserConfig, rateLimitConfig } from "./configs";
 import { errorHandler, Logger } from "./utils";
 import { connect } from "./models";
@@ -27,6 +37,7 @@ app
   .use(logger())
   .use(publicRouter())
   .use(jwt({ secret: process.env.JWT_SECRET }).unless({ path: [/^\/public/] }))
+  .use(decryptJWT)
   .use(privateRouter())
   .use(networkLogger)
   .use(rateLimit(rateLimitConfig));
