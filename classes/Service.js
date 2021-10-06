@@ -47,7 +47,7 @@ export class Service {
   async findOne({ options, input }) {
     try {
       const fields = Object.fromEntries(options.fields.map((key) => [key, 1]));
-      const query = { _id: input.params.id };
+      const query = options.filter || { _id: input.params.id };
       const result = await this.Model.findOne(query).select(fields);
       mongooseResultHandler(result);
       return result;
@@ -72,7 +72,7 @@ export class Service {
     try {
       const query = { _id: input.params.id };
 
-      const result = await this.Model.updateOne(query, input.body);
+      const result = await this.Model.updateOne(query, { $set: input.body });
       mongooseResultHandler(result);
       return result;
     } catch (e) {

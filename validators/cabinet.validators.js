@@ -25,11 +25,10 @@ const lockerSchema = Joi.object({
   height: Joi.number().required(),
   width: Joi.number().required(),
   depth: Joi.number().required(),
-  allocated: Joi.MongoObjectId(),
+  allocated: Joi.any().meta({ _mongoose: { type: MObjectId } }),
 });
 
 export const cabinetSchema = Joi.object({
-  carrier: Joi.any().meta({ _mongoose: { type: MObjectId } }),
   address: addressSchema,
   lockers: Joi.array().items(lockerSchema).max(16).min(1),
 });

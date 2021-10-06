@@ -1,5 +1,4 @@
 const isValidJson = (data) => {
-  console.log({ data });
   let parsed;
   try {
     parsed = JSON.parse(data);
