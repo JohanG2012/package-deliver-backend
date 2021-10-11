@@ -10,10 +10,29 @@ const locSchema = Joi.object({
   y: Joi.number().required(),
 });
 
+const partialLocSchema = Joi.object({
+  x: Joi.number(),
+  y: Joi.number(),
+});
+
 const dimensionSchema = Joi.object({
   height: Joi.number().required(),
   depth: Joi.number().required(),
   width: Joi.number().required(),
+});
+
+const partialDimensionSchema = Joi.object({
+  height: Joi.number(),
+  depth: Joi.number(),
+  width: Joi.number(),
+});
+
+const partialAddressSchema = Joi.object({
+  street: Joi.string(),
+  zipcode: Joi.string(),
+  city: Joi.string(),
+  phone: Joi.string(),
+  loc: partialLocSchema,
 });
 
 const addressSchema = Joi.object({
@@ -30,6 +49,12 @@ export const packageSchema = Joi.object({
   dimension: dimensionSchema,
 });
 
+export const partailPackageSchema = Joi.object({
+  carrier: Joi.any().meta({ _mongoose: { type: MObjectId } }),
+  address: partialAddressSchema,
+  dimension: partialDimensionSchema,
+});
+
 export class createPackageValidator extends Validator {
   constructor(data) {
     super(data, packageSchema);
@@ -38,10 +63,7 @@ export class createPackageValidator extends Validator {
 
 export class updatePackageValidator extends Validator {
   constructor(data) {
-    super(
-      data,
-      Joi.object(packageSchema)
-    );
+    super(data, partailPackageSchema);
   }
 }
 

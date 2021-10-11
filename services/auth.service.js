@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { loginValidator, rotateValidator } from "../validators";
 import { User } from "../models";
 import { mongooseErrorHandler, mongooseResultHandler } from "../utils";
-
+/* eslint-disable class-methods-use-this */
 export class AuthService {
   constructor() {
     this.validators = {

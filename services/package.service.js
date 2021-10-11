@@ -3,7 +3,7 @@ import { createPackageValidator, findPackageValidator, updatePackageValidator, d
 import { Package } from "../models";
 import { Service } from "../classes";
 import { mongooseErrorHandler, mongooseResultHandler } from "../utils";
-import { CabinetService } from ".";
+import { CabinetService } from "./cabinet.service";
 
 export class PackageService extends Service {
   constructor() {
@@ -20,10 +20,12 @@ export class PackageService extends Service {
   async create({ input, token }) {
     try {
       const cabinetService = new CabinetService();
-      const cabinet = await cabinetService.findOne({
+      const cabinets = await cabinetService.find({
         options: {
           fields: [],
+          limit: 100,
           filter: {
+            "lockers.allocated": null,
             $near: {
               $maxDistance: 5000,
               $geometry: { type: "Point", coordinates: [input.body.address.loc.x, input.body.address.loc.y] },
@@ -31,22 +33,34 @@ export class PackageService extends Service {
           },
         },
       });
-      mongooseResultHandler(cabinet);
+      mongooseResultHandler(cabinets);
       const doc = new this.Model({ ...input.body, carrier: token.user_id });
       const result = await doc.save();
       mongooseResultHandler(result);
       // Should be improved to find locker that fits best for the package.
-      const lockerIndex = cabinet.lockers.findIndex(
-        (locker) =>
-          !locker.allocated &&
-          locker.width > input.body.dimension.width &&
-          locker.depth > input.body.dimension.depth &&
-          locker.height > input.body.dimension.height
-      );
-      /* eslint-disable-next-line new-cap */
-      if (lockerIndex < 0) throw new Boom.notFound();
-      cabinet.lockers[lockerIndex] = { allocated: result._id, ...JSON.parse(JSON.stringify(cabinet.lockers[lockerIndex])) };
-      const savedCabinet = await cabinetService.updateOne({ input: { params: { id: cabinet._id }, body: cabinet } });
+      let found;
+      let lockerIndex;
+      cabinets.result.some((cabinet) => {
+        lockerIndex = cabinet.lockers.findIndex(
+          (locker) =>
+            !locker.allocated &&
+            locker.width > input.body.dimension.width &&
+            locker.depth > input.body.dimension.depth &&
+            locker.height > input.body.dimension.height
+        );
+
+        if (lockerIndex >= 0) {
+          found = cabinet;
+          return true;
+        }
+        return false;
+      });
+      if (!found) {
+        /* eslint-disable-next-line new-cap */
+        throw new Boom.notFound();
+      }
+      found.lockers[lockerIndex] = { allocated: result._id, ...JSON.parse(JSON.stringify(found.lockers[lockerIndex])) };
+      const savedCabinet = await cabinetService.updateOne({ input: { params: { id: found._id }, body: found } });
       mongooseResultHandler(savedCabinet);
       return result;
     } catch (e) {

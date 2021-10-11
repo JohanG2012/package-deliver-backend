@@ -21,7 +21,7 @@ import { connect } from "./models";
 
 dotenv.config();
 const app = new Koa();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.NODE_ENV === "TESTING" ? process.env.TEST_PORT || 4000 : process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/db";
 await connect(MONGODB_URI, Logger.critical);
 app
@@ -41,7 +41,7 @@ app
   .use(privateRouter())
   .use(networkLogger)
   .use(rateLimit(rateLimitConfig));
-app.listen(PORT, () => {
+export default app.listen(PORT, () => {
   Logger.development(`Server started on port: ${PORT}`);
 });
 

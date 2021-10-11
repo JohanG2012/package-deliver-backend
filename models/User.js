@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import mongoose from "mongoose";
 import joigoose from "joigoose";
 import Bcrypt from "bcryptjs";

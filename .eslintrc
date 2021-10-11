@@ -3,7 +3,8 @@
   "env": {
     "node": true,
     "es2021": true,
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "rules": {
     "import/prefer-default-export": "off",

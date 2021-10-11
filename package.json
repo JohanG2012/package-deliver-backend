@@ -7,15 +7,27 @@
   "scripts": {
     "prepare": "npx husky install",
     "start": "docker-compose build",
-    "start:dev": "NODE_ENV=DEVELOPMENT node --experimental-specifier-resolution=node index.js",
-    "start:stage": "NODE_ENV=STAGING node --experimental-specifier-resolution=node index.js",
-    "start:prod": "NODE_ENV=PRODUCTION node --experimental-specifier-resolution=node index.js",
+    "start:dev": "cross-env NODE_ENV=DEVELOPMENT node --experimental-specifier-resolution=node index.js",
+    "start:stage": "cross-env NODE_ENV=STAGING node --experimental-specifier-resolution=node index.js",
+    "start:prod": "cross-env NODE_ENV=PRODUCTION node --experimental-specifier-resolution=node index.js",
     "start:watch": "cross-env NODE_ENV=DEVELOPMENT nodemon --experimental-specifier-resolution=node index.js",
     "start:watch:debug": "cross-env NODE_ENV=DEVELOPMENT DEBUG=koa* nodemon --trace-warnings --experimental-specifier-resolution=node index.js",
     "format": "npx run format:prettier npx run format:eslint",
     "format:prettier": "prettier --write .",
     "format:eslint": "eslint --fix .",
-    "test": "jest"
+    "test": "cross-env NODE_ENV=TESTING NODE_OPTIONS=--experimental-vm-modules npx jest --verbose false --detectOpenHandles",
+    "test:watch": "cross-env NODE_ENV=TESTING NODE_OPTIONS=--experimental-vm-modules npx jest --watch --verbose false",
+    "test:coverage:watch": "cross-env NODE_ENV=TESTING NODE_OPTIONS=--experimental-vm-modules npx jest --watch --coverage --verbose false"
+  },
+  "jest": {
+    "testMatch": [
+      "**/*.spec.js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "cache": false,
+    "testTimeout": 20000
   },
   "lint-prepush": {
     "base": "master",
@@ -60,9 +72,11 @@
     "koa-jwt": "^4.0.3",
     "koa-logger": "^3.2.1",
     "koa-ratelimit": "^5.0.1",
+    "mongodb-memory-server": "^7.4.3",
     "mongoose": "^6.0.10"
   },
   "devDependencies": {
+    "@jest/globals": "^27.2.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -73,6 +87,7 @@
     "lint-staged": "^11.2.0",
     "nodemon": "^2.0.13",
     "precise-commits": "^1.0.2",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "supertest": "^6.1.6"
   }
 }

@@ -7,6 +7,11 @@ const router = new Router({
   prefix: "/v1/user",
 });
 
-router.get("/:id", controller.findOne).get("/", controller.find).delete("/:id", controller.deleteOne).patch("/:id", controller.updateOne);
+// prettier-ignore
+router
+  .get("/:id", controller.findOne)
+  .get("/", controller.find)
+  .delete("/:id", controller.deleteOne)
+  .patch("/:id", controller.updateOne);
 
 export default router;

@@ -1,0 +1,955 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/v1/packages [GET] get many with default params should match snapshot 1`] = `
+Object {
+  "data": Object {
+    "count": 20,
+    "has_more": true,
+    "result": Array [
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+    ],
+  },
+  "status": "success",
+}
+`;
+
+exports[`/v1/packages [GET] get many with default params should match snapshot 2`] = `null`;
+
+exports[`/v1/packages [GET] get many with default params should match snapshot 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-type": "application/json; charset=utf-8",
+}
+`;
+
+exports[`/v1/packages [GET] get many with fields should match snapshot 1`] = `
+Array [
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+  Object {
+    "address": Object {
+      "city": "the world",
+      "loc": Object {},
+      "phone": "1234",
+      "street": "1234 Test",
+      "zipcode": "1338",
+    },
+  },
+]
+`;
+
+exports[`/v1/packages [GET] get many with fields should match snapshot 2`] = `null`;
+
+exports[`/v1/packages [GET] get many with fields should match snapshot 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-type": "application/json; charset=utf-8",
+}
+`;
+
+exports[`/v1/packages [GET] get many with pagination should match snapshot 1`] = `
+Object {
+  "data": Object {
+    "count": 5,
+    "has_more": true,
+    "result": Array [
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+    ],
+  },
+  "status": "success",
+}
+`;
+
+exports[`/v1/packages [GET] get many with pagination should match snapshot 2`] = `null`;
+
+exports[`/v1/packages [GET] get many with pagination should match snapshot 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-type": "application/json; charset=utf-8",
+}
+`;
+
+exports[`/v1/packages [GET] get many with sortBy should match snapshot 1`] = `
+Object {
+  "data": Object {
+    "count": 20,
+    "has_more": true,
+    "result": Array [
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+    ],
+  },
+  "status": "success",
+}
+`;
+
+exports[`/v1/packages [GET] get many with sortBy should match snapshot 2`] = `null`;
+
+exports[`/v1/packages [GET] get many with sortBy should match snapshot 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-type": "application/json; charset=utf-8",
+}
+`;
+
+exports[`/v1/packages [GET] get many with with limit should match snapshot 1`] = `
+Object {
+  "data": Object {
+    "count": 5,
+    "has_more": true,
+    "result": Array [
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+      Object {
+        "__v": 0,
+        "address": Object {
+          "city": "the world",
+          "loc": Object {},
+          "phone": "1234",
+          "street": "1234 Test",
+          "zipcode": "1338",
+        },
+        "dimension": Object {},
+      },
+    ],
+  },
+  "status": "success",
+}
+`;
+
+exports[`/v1/packages [GET] get many with with limit should match snapshot 2`] = `null`;
+
+exports[`/v1/packages [GET] get many with with limit should match snapshot 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-type": "application/json; charset=utf-8",
+}
+`;
+
+exports[`/v1/packages [GET] get one should match snapshot 1`] = `
+Object {
+  "data": Object {
+    "__v": 0,
+    "address": Object {
+      "city": "world",
+      "loc": Object {
+        "x": 60.13993787457239,
+        "y": 15.196131420732488,
+      },
+      "phone": "123",
+      "street": "Test 123",
+      "zipcode": "1337",
+    },
+    "dimension": Object {
+      "depth": 30,
+      "height": 30,
+      "width": 30,
+    },
+  },
+  "status": "success",
+}
+`;
+
+exports[`/v1/packages [GET] get one should match snapshot 2`] = `null`;
+
+exports[`/v1/packages [GET] get one should match snapshot 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-length": "364",
+  "content-type": "application/json; charset=utf-8",
+}
+`;
+
+exports[`/v1/packages [PATCH] update one should update resource at persistant storage 1`] = `
+Object {
+  "data": Object {
+    "__v": 0,
+    "address": Object {
+      "city": "world",
+      "loc": Object {
+        "x": 60.13993787457239,
+        "y": 15.196131420732488,
+      },
+      "phone": "123",
+      "street": "new address",
+      "zipcode": "1337",
+    },
+    "dimension": Object {
+      "depth": 30,
+      "height": 30,
+      "width": 30,
+    },
+  },
+  "status": "success",
+}
+`;
+
+exports[`/v1/packages [PATCH] update one should update resource at persistant storage 2`] = `null`;
+
+exports[`/v1/packages [PATCH] update one should update resource at persistant storage 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-type": "application/json; charset=utf-8",
+}
+`;
+
+exports[`/v1/packages [POST] create should match snapshot 1`] = `
+Object {
+  "data": Object {
+    "__v": 0,
+    "address": Object {
+      "city": "world",
+      "loc": Object {
+        "x": 60.13993787457239,
+        "y": 15.196131420732488,
+      },
+      "phone": "123",
+      "street": "Test 123",
+      "zipcode": "1337",
+    },
+    "dimension": Object {
+      "depth": 30,
+      "height": 30,
+      "width": 30,
+    },
+  },
+  "status": "success",
+}
+`;
+
+exports[`/v1/packages [POST] create should match snapshot 2`] = `null`;
+
+exports[`/v1/packages [POST] create should match snapshot 3`] = `
+Object {
+  "access-control-allow-headers": "Origin, Content-Type, Accept, Authorization",
+  "access-control-allow-methods": "POST, GET, PUT, PATCH, DELETE, OPTIONS",
+  "access-control-allow-origin": "*",
+  "connection": "close",
+  "content-length": "364",
+  "content-type": "application/json; charset=utf-8",
+  "location": "https://127.0.0.1:4444/v1/package",
+}
+`;

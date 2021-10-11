@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { mongooseResultHandler, mongooseErrorHandler } from "../utils";
+import { mongooseResultHandler, mongooseErrorHandler, deepMerge } from "../utils";
 
 export class Service {
   constructor(validators, model) {
@@ -23,11 +23,11 @@ export class Service {
     try {
       const fields = Object.fromEntries(options.fields.map((key) => [key, 1]));
       const query = options.filter || {};
-      if (pagination.next) {
-        query._id = { $lt: mongoose.Types.ObjectId(pagination.next) };
+      if (pagination?.next) {
+        query._id = { $gt: mongoose.Types.ObjectId(pagination.next) };
       }
-      if (pagination.prev) {
-        query._id = { $gt: mongoose.Types.ObjectId(pagination.prev) };
+      if (pagination?.prev) {
+        query._id = { $lt: mongoose.Types.ObjectId(pagination.prev) };
       }
       const result = await this.Model.find(query)
         .limit(options.limit || this.limit)
@@ -37,6 +37,7 @@ export class Service {
       return {
         result,
         has_more: result.length === (options.limit || this.limit),
+        count: result.length,
         next: result.length === (options.limit || this.limit) ? result[result.length - 1]._id : null,
       };
     } catch (e) {
@@ -71,8 +72,9 @@ export class Service {
   async updateOne({ input }) {
     try {
       const query = { _id: input.params.id };
-
-      const result = await this.Model.updateOne(query, { $set: input.body });
+      const original = await this.Model.findOne(query);
+      const merged = deepMerge(original, input.body);
+      const result = await this.Model.findOneAndUpdate(query, merged, { new: true, overwrite: false });
       mongooseResultHandler(result);
       return result;
     } catch (e) {

@@ -14,11 +14,23 @@ const locSchema = Joi.object({
   y: Joi.number().required(),
 });
 
+const partialLocSchema = Joi.object({
+  x: Joi.number(),
+  y: Joi.number(),
+});
+
 const addressSchema = Joi.object({
   street: Joi.string().required(),
   zipcode: Joi.string().required(),
   city: Joi.string().required(),
   loc: locSchema,
+});
+
+const partialAddressSchema = Joi.object({
+  street: Joi.string(),
+  zipcode: Joi.string(),
+  city: Joi.string(),
+  loc: partialLocSchema,
 });
 
 const lockerSchema = Joi.object({
@@ -28,9 +40,21 @@ const lockerSchema = Joi.object({
   allocated: Joi.any().meta({ _mongoose: { type: MObjectId } }),
 });
 
+const partialLockerSchema = Joi.object({
+  height: Joi.number(),
+  width: Joi.number(),
+  depth: Joi.number(),
+  allocated: Joi.any().meta({ _mongoose: { type: MObjectId } }),
+});
+
 export const cabinetSchema = Joi.object({
   address: addressSchema,
   lockers: Joi.array().items(lockerSchema).max(16).min(1),
+});
+
+export const partialCabinetSchema = Joi.object({
+  address: partialAddressSchema,
+  lockers: Joi.array().items(partialLockerSchema).max(16).min(1),
 });
 
 export class createCabinetValidator extends Validator {
@@ -41,7 +65,7 @@ export class createCabinetValidator extends Validator {
 
 export class updateCabinetValidator extends Validator {
   constructor(data) {
-    super(data, cabinetSchema);
+    super(data, partialCabinetSchema);
   }
 }
 
